@@ -3,14 +3,15 @@
   "configurationSource": "attributes",
   "bindings": [
     {
-      "type": "timerTrigger",
-      "schedule": "0 */2 * * * *",
-      "useMonitor": true,
-      "runOnStartup": false,
-      "name": "myTimer"
+      "type": "httpTrigger",
+      "methods": [
+        "get"
+      ],
+      "authLevel": "function",
+      "name": "req"
     }
   ],
   "disabled": false,
   "scriptFile": "../bin/ChaosExecuter.dll",
-  "entryPoint": "ChaosExecuter.Trigger.TimelyTrigger.Run"
+  "entryPoint": "ChaosExecuter.Api.ApiList.GetSchedules"
 }
